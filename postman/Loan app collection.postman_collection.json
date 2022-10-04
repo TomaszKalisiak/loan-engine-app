@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "8f7a4eb5-26c0-4736-b195-17ff61baba00",
+		"name": "Loan app collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2546717"
+	},
+	"item": [
+		{
+			"name": "apply for loan",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "find contract",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "due date extension",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
