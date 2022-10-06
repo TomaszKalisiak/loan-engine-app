@@ -9,8 +9,6 @@ import com.ngworks.loanengine.domain.model.CreditApplication;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalTime;
-
 
 @Service
 @RequiredArgsConstructor
@@ -19,12 +17,13 @@ public class LoanEngineService {
     private final LoanService loanService;
     private final DecisionEngine decisionEngine;
     private final LoanEngineValidator validator;
+    private final CurrentTimeProvider currentTimeProvider;
 
     public ContractDto applyForLoan(final CreditApplicationDto creditApplicationDto) {
         validator.validate(creditApplicationDto);
 
         CreditApplication creditApplication = CreditApplicationMapper.toValueObject(creditApplicationDto);
-        creditApplication.setApplicationRequestTime(LocalTime.now());
+        creditApplication.setApplicationRequestTime(currentTimeProvider.getLocalTimeNow());
 
         decisionEngine.decide(creditApplication);
 
